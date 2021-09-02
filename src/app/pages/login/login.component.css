@@ -1,0 +1,20 @@
+.div{
+    background-color: black;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.form{
+    position: relative;
+}
+.title{
+    color: white;
+}
+.letras{
+    color: white;
+    background-color: black;
+}

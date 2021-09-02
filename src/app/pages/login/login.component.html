@@ -1,0 +1,28 @@
+<div class="div">
+    <h3 class="title">Login</h3>
+<form [formGroup]="myForm" (ngSubmit)="login()" class="form">
+    <div>
+        <mat-form-field >
+         <mat-label for="">Email</mat-label>
+         <input matInput type="email" formControlName="correo" class="letras">
+        </mat-form-field>   
+ 
+     <div *ngIf="myForm.get('email')?.errors && myForm.get('email')?.dirty">
+         El campo es obligatorio
+     </div>
+     </div>
+     <div>
+        <mat-form-field>
+        <mat-label for="">Contraseña</mat-label>
+        <input matInput type="password" formControlName="clave" class="letras">
+        </mat-form-field>
+    
+    <div *ngIf="myForm.get('clave')?.errors && myForm.get('clave')?.dirty">
+       <p *ngIf="myForm.get('clave')?.hasError('required')">El campo es obligatorio</p> 
+       <p *ngIf="myForm.get('clave')?.hasError('minlength')" >Debe tener al menos 6 caracteres</p>
+       <p *ngIf="myForm.get('clave')?.hasError('maxlength')" >Debe tener maximo 10 caracteres</p>
+    </div>
+    </div>
+    <button mat-raised-button color="secondary" type="submit" [disabled]="myForm.invalid">Login</button>
+</form>
+</div>

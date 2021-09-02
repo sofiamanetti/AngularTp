@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-registro',
@@ -9,7 +10,8 @@ import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 export class RegistroComponent implements OnInit {
   myForm:FormGroup
   constructor(
-    private fb:FormBuilder
+    private fb:FormBuilder,
+    private _snackbar:MatSnackBar,
   ) { 
     this.myForm=this.fb.group({
       nombre:["",[Validators.required]],
@@ -23,6 +25,9 @@ export class RegistroComponent implements OnInit {
   }
   registrarse(){
     console.log(this.myForm.value)
+    this._snackbar.open("Gracias por registrarse","Ocultar",{
+      duration:2000
+    })
   }
   ngOnInit(): void {
   }

@@ -1,0 +1,9 @@
+<mat-spinner *ngIf="loading"></mat-spinner>
+<h1>Productos</h1>
+<div *ngIf="!loading">
+    <div *ngFor="let producto of productos">
+      <app-producto
+          [data]="producto"
+      ></app-producto>
+    </div>
+</div>

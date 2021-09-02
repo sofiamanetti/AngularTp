@@ -1,0 +1,15 @@
+
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{data.title}}</mat-card-title>
+      <mat-card-subtitle>{{data.price | currency }}</mat-card-subtitle>
+    </mat-card-header>
+      <img mat-card-image src="{{data.thumbnail}}" alt="Imagen Producto">
+     <mat-card-actions *ngIf="verDetalle">
+      <button color="secondary" mat-button routerLink="/productos/{{data.id}}">Ver detalle</button>
+     </mat-card-actions>
+     <mat-card-actions *ngIf="isLogin" >
+      <button mat-button (click)="comprar()">Comprar</button>
+    </mat-card-actions>
+  </mat-card>

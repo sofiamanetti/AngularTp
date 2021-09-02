@@ -10,10 +10,11 @@ export class ProductosService {
     private http:HttpClient
   ) { }
   getAllPromise(){
-    return this.http.get("https://jsonfy.com/items",/*{
-      headers:{
+    return this.http.get("https://api.mercadolibre.com/sites/MLA/search?q=ipod",{
+    }).toPromise()
 
-      }
-    }*/).toPromise()
+  }
+  getById(id:string){
+    return this.http.get("https://api.mercadolibre.com/items/"+id).toPromise()
   }
 }
